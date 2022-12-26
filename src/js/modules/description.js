@@ -1,12 +1,11 @@
-export default function specialAttack(character) {
-  const characterSpecial = [];
-  for (const item of character.special) {
-    const {
-      id, name, icon, description = 'Описание недоступно',
-    } = item;
-    characterSpecial.push({
+export default function specialAttack({ special }) {
+  const arr = [];
+  special.forEach(({
+    id, name, icon, description = 'Описание недоступно',
+  }) => {
+    arr.push({
       id, name, icon, description,
     });
-  }
-  return characterSpecial;
+  });
+  return arr;
 }
